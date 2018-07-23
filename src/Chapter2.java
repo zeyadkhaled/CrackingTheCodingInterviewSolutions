@@ -87,5 +87,18 @@ public class Chapter2 {
     	return p2;
     }
     
-
+    /**
+     * Question (3): Delete the middle element of a linked list given access to that element
+     */
+    /**
+     * #2.3# Solution (1) (Copying references)
+     */
+    public static boolean removeElement( Node n) {
+    	if ( n == null || n.next == null ) return false; //If element isn't in the middle, first or last
+    	
+    	Node next = n.next; //Reference to next node
+    	n.data = next.data; //Copy data of next node
+    	n.next = next.next; //Change next property to the next node of the existing next node to remove it
+    	return true;
+    }
 }
