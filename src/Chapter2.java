@@ -10,6 +10,10 @@ public class Chapter2 {
 			next = null;
 		}
 	}
+	
+	/**
+	 * Question (1): Remove duplicates of a given linked list
+	 */
 
 	/**
 	 * #2.1# Solution (1) for unordered linked list (HashSet approach)
@@ -59,7 +63,29 @@ public class Chapter2 {
         return head;
     }
     
+    /**
+     * Question (2): Return the Kth to last element in a linked list
+     */
     
+    /**
+     * #2.2# Solution (1) (Iterative solution)
+     */
+    public static Node findKth(Node head, int k) {
+    	Node p1 = head;
+    	Node p2 = head;
+    	
+    	for ( int i = 0; i < k; i++) { //Move p1, K steps in the linked list
+    		if ( p1 == null) return null;
+    		p1 = p1.next;
+    	}
+    	
+    	while ( p1 != null) { //Move p1 until it reaches the end, at that moment p2 will be Length - K steps or Kth elements from the end
+    		p1 = p1.next;
+    		p2 = p2.next;
+    	}
+    	
+    	return p2;
+    }
     
 
 }
