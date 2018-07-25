@@ -101,4 +101,38 @@ public class Chapter2 {
     	n.next = next.next; //Change next property to the next node of the existing next node to remove it
     	return true;
     }
+    /**
+     * Question (4): Partition Linked List
+     */
+    /**
+     * #2.5# Solution (1) 
+     */
+    //To be implemented
+    
+    /**
+     * Question (5): Addition in Linked List, Reversed and Normal order
+     */
+    /**
+     * #2.5# Solution (1) for reversed Linked Lists
+     */
+    public static Node addList( Node l1, Node l2, int carry) {
+    	if ( l1 == null && l2 == null && carry == 0) return null;
+    	
+    	int value = carry;
+    	Node result = new Chapter2().new Node(0);
+    	
+    	if ( l1 != null) value += l1.data;
+    	if ( l2 != null) value =+ l2.data;
+    	result.data = value % 10;
+    	
+    	if( l1 != null || l2 != null) {
+    		Node nextNode = addList( l1 == null ? null : l1, l2 == null ? null : l2, value >= 10 ? 1 : 0);
+    		result.next = nextNode;
+    	}
+    	return result;
+    }
+    /**
+     * #2.5# Solution (2) for normal order linked list
+     */
+    //To be implemented
 }
