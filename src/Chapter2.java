@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Stack;
 
 public class Chapter2 {
 
@@ -135,4 +136,30 @@ public class Chapter2 {
      * #2.5# Solution (2) for normal order linked list
      */
     //To be implemented
+    
+    /**
+     * Question (6) : Is linked list a palindorme?
+     */
+    /**
+     * #2.6# Solution (1) Double pointer Stack solution
+     */
+    public static boolean isPalindorme( Node list) {
+    	Node fastPtr = list;
+    	Node slowPtr = list;
+    	Stack<Integer>  stack = new Stack<>();
+    	while ( fastPtr != null && fastPtr.next != null) {
+    		stack.push(slowPtr.data);
+    		fastPtr = fastPtr.next.next;
+    		slowPtr = slowPtr.next;
+    	}
+    	
+    	if ( fastPtr != null) slowPtr = slowPtr.next;
+
+    	while ( slowPtr != null ) {
+    		int value = stack.pop().intValue();
+    		if ( slowPtr.data != value) return false;
+    		slowPtr = slowPtr.next;
+    	}
+    	return true;
+    }
 }
