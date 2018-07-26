@@ -149,7 +149,7 @@ public class Chapter2 {
      * #2.5# Solution (1) for reversed Linked Lists
      */
     public static Node addList( Node l1, Node l2, int carry) {
-    	if ( l1 == null && l2 == null && carry == 0) return null;
+    	if ( l1 == null && l2 == null && carry == 0) return null; 
     	
     	int value = carry;
     	Node result = new Chapter2().new Node(0);
@@ -216,6 +216,34 @@ public class Chapter2 {
     	}
     	
     	return null;
+    }
+    
+    /**
+     * Question (8) : Find node at the start of Circular linked list
+     */
+    /**
+     * Solution #2.8# Solution using 2 pointers moving at different speeds
+     */
+    public static Node findCirrcularNode(Node head) {    	
+    	Node ptr1 = head;
+    	Node ptr2 = head;
+    	while ( ptr2 != null && ptr2.next != null ) {
+    		ptr1 = ptr1.next;
+    		ptr2 = ptr2.next.next;
+    		if ( ptr1 == ptr2) break;
+    	}
+    	
+    	if ( ptr2 == null || ptr2.next == null) {
+    		return null;
+    	}
+    	
+    	ptr1 = head;
+    	while ( ptr1 != ptr2 ) {
+    		ptr1 = ptr1.next;
+    		ptr2 = ptr2.next;
+    	}
+    	
+    	return ptr1;
     }
     
 //    public static void main( String[] args) { 
