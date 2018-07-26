@@ -222,8 +222,8 @@ public class Chapter2 {
      * Question (8) : Find node at the start of Circular linked list
      */
     /**
-     * Solution #2.8# Solution using 2 pointers moving at different speeds
-     */
+     * Solution #2.8# Solution using 2 pointers moving at different speed“
+     *      */
     public static Node findCirrcularNode(Node head) {    	
     	Node ptr1 = head;
     	Node ptr2 = head;
