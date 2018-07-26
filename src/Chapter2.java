@@ -195,7 +195,40 @@ public class Chapter2 {
     	return true;
     }
     
+    /**
+     * Question (7) : Find node of intersection between two lists
+     */
+    /**
+     * #2.7# Solution (1) Using a HashSet
+     */
+    public static Node findIntersection(Node list1, Node list2) {
+    	Set<Node> set = new HashSet<>();
+    	Node temp = list1;
+    	while ( temp != null) {
+    		set.add(temp);
+    		temp = temp.next;
+    	}
+    	
+    	temp = list2;
+    	while ( temp != null) {
+    		if ( set.contains(temp)) return temp;
+    		temp = temp.next;
+    	}
+    	
+    	return null;
+    }
     
-    
+//    public static void main( String[] args) { 
+//    	Node list1 = new Chapter2().new Node(1);
+//    	Node list2 = new Chapter2().new Node(2);
+//    	Node same = new Chapter2().new Node(5);
+//    	
+//    	list1.next = new Chapter2().new Node(0);
+//    	list2.next = new Chapter2().new Node(0);
+//    	list1.next.next = same;
+//    	list2.next.next = same;
+//    	
+//    	System.out.println( findIntersection(list1,list2).data);
+//    }
 
 }
