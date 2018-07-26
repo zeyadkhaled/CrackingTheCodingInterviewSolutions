@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Set;
 import java.util.Stack;
 
 public class Chapter2 {
@@ -106,9 +107,40 @@ public class Chapter2 {
      * Question (4): Partition Linked List
      */
     /**
-     * #2.5# Solution (1) 
+     * #2.4# Solution (1) 
      */
-    //To be implemented
+    public static Node partitionList(Node node, int x) {
+    	Node tailFront = null , tailEnd = null;
+    	Node headFront = null, headEnd = null;
+    	
+    	while ( node != null) {
+    		Node temp = node.next;
+    		node.next = null;
+    		if ( node.data < x) {
+    			if (headFront == null) {
+    				headFront = node;
+    				headEnd = headFront;
+    			} else {
+    				headEnd.next = node;
+    				headEnd = node;
+    			}
+    		} else {
+    			if ( tailFront == null) {
+    				tailFront = node;
+    				tailEnd = tailFront;
+    			} else {
+    				tailEnd.next = node;
+    				tailEnd = node;
+    			}
+    		}
+    		node = temp;
+    	}
+    	
+    	if ( headFront == null ) { return tailFront; }
+    	
+    	headEnd.next = tailFront;
+    	return headFront;
+    }
     
     /**
      * Question (5): Addition in Linked List, Reversed and Normal order
@@ -162,4 +194,8 @@ public class Chapter2 {
     	}
     	return true;
     }
+    
+    
+    
+
 }
