@@ -1,5 +1,8 @@
 package Chapter4;
-
+/**
+ * Implement a method that creates a minimal binary tree from a sorted int array
+ *
+ */
 public class Question2 {
 	
 

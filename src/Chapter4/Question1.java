@@ -1,6 +1,8 @@
 package Chapter4;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+
+import Chapter4.Question2.TreeNode;
 /**
  * Implement a BFS search to find if a route exists between two nodes in a graph
  *
