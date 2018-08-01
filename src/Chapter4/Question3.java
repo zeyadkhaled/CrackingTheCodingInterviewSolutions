@@ -24,6 +24,4 @@ public class Question3 {
 		return lists;
 	}
 
-
-
 }
